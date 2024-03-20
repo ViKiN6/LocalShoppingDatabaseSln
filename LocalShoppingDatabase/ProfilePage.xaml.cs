@@ -33,10 +33,10 @@ public partial class ProfilePage : ContentPage
 
             LoadData();
         }
-        public void LoadData() // Loading the data
+        public void LoadData() 
         {
-            Profile profile = _database.GetProfileByID(1); // Assigning the user to a userid that was saved
-            CurrentUser = profile; // Assigning the user to the CurrentUser (will display on screen)
+            Profile profile = _database.LocalDatabase(1); // Assigning the user to a userid that was saved
+            Profile = profile; // Assigning the user to the CurrentUser (will display on screen)
         }
 
     private void SaveProfile(object sender, EventArgs e)
@@ -44,9 +44,9 @@ public partial class ProfilePage : ContentPage
 
         Profile CurrentProfle = null;
         _database.UpdateProfile(CurrentProfle);
-        nameEntry.Text = "";
-        surnameEntry.Text = "";
-        emailEntry.Text = "";
+        nameEntry.Text = "Vicardo";
+        surnameEntry.Text = "Kakora";
+        emailEntry.Text = "vk@gmail.com";
     }
 
         private void LoadProfile(object sender, EventArgs e) 

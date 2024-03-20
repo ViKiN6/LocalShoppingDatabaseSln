@@ -27,7 +27,7 @@ namespace LocalShoppingDatabase.Services
 
           
             _dbConnection.CreateTable<Profile>();
-            _dbConnection.CreateTable<ShoppingList>();
+            _dbConnection.CreateTable<ShoppingListPage>();
             _dbConnection.CreateTable<Cart>();
 
 
@@ -41,7 +41,7 @@ namespace LocalShoppingDatabase.Services
 
                 Profile profile = new Profile()
                 {
-                    Name = "Vicardo";
+                    Name =  "Vicardo";
                     Surname = "Kakora";
                     EmailAddress = "vk@gmail.com";
                 };
@@ -50,25 +50,25 @@ namespace LocalShoppingDatabase.Services
             {
 
             }
-            if (_dbConnection.Table<ShoppingList>().Count() == 0)
+            if (_dbConnection.Table<ShoppingListPage>().Count() == 0)
             {
-                List<ShoppingList> shoppinglist = new List<ShoppingList>()
+                List<ShoppingListPage> shoppinglistpage = new List<ShoppingListPage>()
                 {
-                    new ShoppingList()
+                    new ShoppingListPage()
                     {
                         ItemName = "Item",
                         ItemQuantity = 1,
                         ItemPrice = 1,
                       
                     },
-                    new ShoppingList()
+                    new ShoppingListPage()
                     {
                         ItemName = "Item 2",
                         ItemQuantity = 2,
                         ItemPrice = 2,
                     
                     },
-                    new ShoppingList()
+                    new ShoppingListPage()
                     {
                         ItemName = "Item 3",
                         ItemQuantity = 3,
@@ -76,7 +76,7 @@ namespace LocalShoppingDatabase.Services
                        
                     }
                 };
-                _dbConnection.InsertAll(shoppinglist);
+                _dbConnection.InsertAll(shoppinglistpage);
             }
 
           
@@ -96,7 +96,7 @@ namespace LocalShoppingDatabase.Services
 
         public Profile GetUserByID(int id)
         {
-            Profile user = _dbConnection.Table<Profile>().Where(x => x.UserId == id).FirstOrDefault();
+            Profile user = _dbConnection.Table<Profile>().Where(x => x.ProfileId == id).FirstOrDefault();
 
             if (user != null)
                 _dbConnection.GetChildren(user, true);
@@ -107,9 +107,9 @@ namespace LocalShoppingDatabase.Services
 
 
         // Shopping List Methods
-        public List<ShoppingList> GetAllItems()
+        public List<ShoppingListPage> GetAllItems()
         {
-            return _dbConnection.Table<ShoppingList>().ToList();
+            return _dbConnection.Table<ShoppingListPage>().ToList();
         }
 
 
@@ -131,7 +131,7 @@ namespace LocalShoppingDatabase.Services
             
             };
 
-            if (newItem.NameOfItem == "John Doe")
+            if (newItem.NameOfItem == "Apple")
             {
 
             }
@@ -145,5 +145,6 @@ namespace LocalShoppingDatabase.Services
         {
             _dbConnection.Delete(itemToRemove);
         }
+
     }
 }

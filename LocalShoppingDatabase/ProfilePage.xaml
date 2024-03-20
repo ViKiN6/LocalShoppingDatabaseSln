@@ -15,13 +15,12 @@
         <Frame BorderColor="black" Margin="50">
             <StackLayout>
                 <Label Text="Name: " Margin="10, 0, 0 ,0" FontAttributes="Bold" FontSize="17"></Label>
-                <Entry Margin="7, 0, 0 ,0" x:Name="nameEntry" Text="{Binding CurrentUser.Name}"></Entry>
+                <Entry Margin="7, 0, 0 ,0" x:Name="nameEntry" Text="{Binding CurrentProfile.Name}"></Entry>
                 <Label Text="Surname: " Margin="10, 0, 0 ,0" FontAttributes="Bold" FontSize="17"></Label>
-                <Entry Margin="7, 0, 0 ,0" x:Name="surnameEntry" Text="{Binding CurrentUser.Surname}"></Entry>
+                <Entry Margin="7, 0, 0 ,0" x:Name="surnameEntry" Text="{Binding CurrentProfile.Surname}"></Entry>
                 <Label Text="Email: " Margin="10, 0, 0 ,0" FontAttributes="Bold" FontSize="17"></Label>
-                <Entry Margin="7, 0, 0 ,0" x:Name="emailEntry" Text="{Binding CurrentUser.EmailAddress}"></Entry>
-                <Label Text="Bio: " Margin="10, 0, 0 ,0" FontAttributes="Bold" FontSize="17"></Label>
-                <Entry Margin="7, 0, 0 ,0" x:Name="bioEntry" Text="{Binding CurrentUser.Bio}"></Entry>
+                <Entry Margin="7, 0, 0 ,0" x:Name="emailEntry" Text="{Binding CurrentProfile.EmailAddress}"></Entry>
+               
 
                 <StackLayout Orientation="Horizontal" Spacing="25" HorizontalOptions="Center" Margin="20">
                     <Button Text="Save" Clicked="SaveProfile" WidthRequest="120" HeightRequest="50" BackgroundColor="Black"></Button>

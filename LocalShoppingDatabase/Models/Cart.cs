@@ -18,7 +18,7 @@ namespace LocalShoppingDatabase.Models
         public string NameOfItem { get; set; }
         public string ItemImageCart { get; set; }
 
-        [ForeignKey(typeof(ShoppingList))]
+        [ForeignKey(typeof(ShoppingListPage))]
         public int ItemID { get; set; } 
 
         [ForeignKey(typeof(Profile))]

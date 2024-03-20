@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace LocalShoppingDatabase;
 
-public partial class ShoppingList: ContentPage
+public partial class ShoppingListPage: ContentPage
 {
     private LocalDatabase _database;
 
@@ -18,12 +18,19 @@ public partial class ShoppingList: ContentPage
             OnPropertyChanged();
         }
     }
-    public ShoppingList()
+
+    public string ItemName { get; internal set; }
+    public int ItemQuantity { get; internal set; }
+    public int ItemPrice { get; internal set; }
+
+    public ShoppingListPage()
     {
         InitializeComponent();
         _database = new LocalDatabase();
         BindingContext = this;
     }
+
+   
     protected override void OnAppearing()
     {
         base.OnAppearing();

@@ -20,7 +20,7 @@ namespace LocalShoppingDatabase.Models
 
             //Relationships
             [OneToOne]
-            public Cart cart { get; set; }
+            public Cart CartPage { get; set; }
         }
 
 

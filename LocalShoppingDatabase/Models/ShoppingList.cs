@@ -16,6 +16,6 @@ namespace LocalShoppingDatabase.Models
         public int ItemQuantity { get; set; }
         public decimal ItemPrice { get; set; }
         public string ItemDescription { get; set; }
-        public string ItemImage { get; set; }
+      
     }
 }
