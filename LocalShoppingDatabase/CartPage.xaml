@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LocalShoppingDatabase.CartPage"
              Title="CartPage">
-    <ListView ItemsSource="{Binding CartItems}" HasUnevenRows="True">
+    <ListView ItemsSource="{Binding CartList}" HasUnevenRows="True">
         <ListView.ItemTemplate>
-            <DataTemplate x:DataType="p:CartPage">
+            <DataTemplate x:DataType="p:Cart">
                 <ViewCell>
                     <StackLayout>
                         <Grid>
@@ -19,10 +19,10 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Label Text="{Binding NameOfItem}" Grid.Column="1" Grid.Row="0" Margin="10, 30, 0, 0" FontSize="30"/>
+                            <Label Text="{Binding NameOfList}" Grid.Column="1" Grid.Row="0" Margin="10, 30, 0, 0" FontSize="30"/>
                             <HorizontalStackLayout Grid.Column="1" Grid.Row="1">
                                 <Label Text="Quantity:" FontSize="20" Margin="10, 0, 0, 0"/>
-                                <Label Text="{Binding ItemAmount}" Grid.Column="1" Grid.Row="1" Margin="10, 0, 0, 0" FontSize="20"/>
+                                <Label Text="{Binding ListAmount}" Grid.Column="1" Grid.Row="1" Margin="10, 0, 0, 0" FontSize="20"/>
                             </HorizontalStackLayout>
                             <HorizontalStackLayout Grid.Column="1" Grid.Row="2">
                                 <Label Text="Total: R" FontSize="20" Margin="10, 0, 0, 0" />
@@ -33,7 +33,6 @@
                             </HorizontalStackLayout>
                         </Grid>
                     </StackLayout>
-
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

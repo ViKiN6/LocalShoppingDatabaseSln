@@ -16,15 +16,14 @@ namespace LocalShoppingDatabase.Models
         public int ItemAmount { get; set; }
         public decimal CartTotal { get; set; }
         public string NameOfItem { get; set; }
-        public string ItemImageCart { get; set; }
 
-        [ForeignKey(typeof(ShoppingListPage))]
+        [ForeignKey(typeof(ShoppingList))]
         public int ItemID { get; set; } 
 
         [ForeignKey(typeof(Profile))]
         public int Name { get; set; }
        
         [OneToOne]
-        public Profile UserProfile { get; set; }
+        public Profile profile { get; set; }
     }
 }

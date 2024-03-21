@@ -12,10 +12,12 @@ namespace LocalShoppingDatabase.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ItemID { get; set; }
-        public string ItemName { get; set; }
-        public int ItemQuantity { get; set; }
-        public decimal ItemPrice { get; set; }
-        public string ItemDescription { get; set; }
-      
+        public string ListName { get; set; }
+        public int ListQuantity { get; set; }
+        public decimal ListPrice { get; set; }
+       
+
+        [ForeignKey(typeof(Cart))]
+        public int CartID { get; set; } 
     }
 }

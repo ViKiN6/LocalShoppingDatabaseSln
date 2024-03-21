@@ -8,13 +8,13 @@ public partial class CartPage : ContentPage
 {
     private LocalDatabase _database;
 
-    private ObservableCollection<Cart> _cartitems;
-    public ObservableCollection<Cart> CartItems
+    private ObservableCollection<Cart> _cartlist;
+    public ObservableCollection<Cart> CartList
     {
-        get { return _cartitems; }
+        get { return _cartlist; }
         set
         {
-            _cartitems = value;
+            _cartlist = value;
             OnPropertyChanged();
         }
     }
@@ -32,8 +32,8 @@ public partial class CartPage : ContentPage
     }
     public void LoadData()
     {
-        // Returns a list from the database with all data and displays in one the screen
-        CartItems = new ObservableCollection<Cart>(_database.GetAllCartItems());
+        
+        CartList = new ObservableCollection<Cart>(_database.GetAllCartList());
     }
 
     private void Button_Clicked(object sender, EventArgs e)
@@ -43,7 +43,7 @@ public partial class CartPage : ContentPage
 
         if (selectedItem != null)
         {
-            CartItems.Remove(selectedItem);
+            CartList.Remove(selectedItem);
             _database.RemoveFromCart(selectedItem);
         }
     }
